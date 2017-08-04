@@ -11,6 +11,8 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'shopify_api'
 gem 'activeresource', github: 'rails/activeresource'
+gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'pry'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'

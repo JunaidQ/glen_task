@@ -12,8 +12,7 @@ class ProductsController < ApplicationController
       shop = ShopifyAPI::Shop.current
       product_count = ShopifyAPI::Product.count
       products = ShopifyAPI::Product.all
-      result_xml = products.to_xml(root: 'shop')
-      @result = result_xml
+      @result = parse_result(products)
 
     rescue Exception
       logger.error "Invalid Authentication Key "
@@ -24,5 +23,20 @@ class ProductsController < ApplicationController
       format.xml { render xml: @result}
     end
    
+  end
+
+
+  def parse_result(result_xml)     
+    binding.pry
+    builder = Nokogiri::XML::Builder.new do |xml|
+      xml.root {
+        xml.items {
+        
+        }
+      }
+    end
+    puts builder.to_xml
+
+    builder.to_xml
   end
 end
