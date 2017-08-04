@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
+  
   def index
+  end
+
+  def shop
     @api_key = params[:search_box]
     shop_url = "https://#{@api_key}:f93a66c64ef617e20dcdfa1c90ba7995@alibabalhr.myshopify.com/admin"
     ShopifyAPI::Base.site = shop_url
@@ -15,9 +19,5 @@ class ProductsController < ApplicationController
       format.xml { render xml: @result}
     end
    
-  end
-
-  def shop
-
   end
 end
