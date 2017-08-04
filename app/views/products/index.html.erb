@@ -1,2 +1,6 @@
 <h1>Products#index</h1>
 <p>Find me in app/views/products/index.html.erb</p>
+<%= form_tag shop_path, method: :get, target: "_blank" do %>
+	<%= text_field_tag :search_box, nil, placeholder: "Paste API Key here", required: true %>
+	<%= submit_tag 'Get XML' %>
+<% end %>
