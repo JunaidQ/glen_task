@@ -16,4 +16,8 @@ class ProductsController < ApplicationController
     end
    
   end
+
+  def shop
+
+  end
 end

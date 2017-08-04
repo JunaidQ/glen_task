@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'products/index'
+  get '/index' , to: 'products#index'
+  get '/shop', to: 'products#shop'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'products#index'
 end
