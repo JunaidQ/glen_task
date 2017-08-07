@@ -7,12 +7,12 @@ class ProductsController < ApplicationController
   def shop
     api_key = params[:search_box]
     shop_url = get_shop_url(api_key)
-    ShopifyAPI::Base.site = shop_url
     begin 
+      ShopifyAPI::Base.site = shop_url
       shop = ShopifyAPI::Shop.current
       product_count = ShopifyAPI::Product.count
       products = ShopifyAPI::Product.all
-      @result = parse_result(products)
+      @result = parse_result(products,product_count)
     rescue Exception
       logger.error "Invalid Authentication Key "
       result = Nokogiri::XML::Builder.new do |xml|
