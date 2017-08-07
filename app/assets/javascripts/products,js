@@ -1,0 +1,5 @@
+$(".btnXML").click(function(){
+  setTimeout(function(){ 
+    $(".btnXML").removeAttr('disabled');
+  }, 3000);
+});
