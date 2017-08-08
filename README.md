@@ -1,24 +1,30 @@
-# README
+*Developer*
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This assumes Ubuntu Linux.
 
-Things you may want to cover:
+Some basic steps:
 
-* Ruby version
+- Install RVM
 
-* System dependencies
+Then do the following:
 
-* Configuration
+```
+rvm install 2.3.0
+git clone git@github.com:JunaidQ/glen_task.git
+cd glen_task
+gem install bundler
+bundle install
+```
 
-* Database creation
+To enter the Shopiy store in yml file:
 
-* Database initialization
+```
+cp config/local_env.example.yml config/local_env.yml
+```
 
-* How to run the test suite
+To run the local development server:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails s
+```
+Browse to http://localhost:3000
